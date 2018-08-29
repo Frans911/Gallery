@@ -1,0 +1,51 @@
+<!--
+  Generated template for the UploadsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar text-center color="btnTransparency">
+    <ion-title>Uploads</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="body">
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button full color="btnColor1" (click)="retriveImages()"><ion-icon style="font-size: 20pt" name="image"></ion-icon></button>
+          </ion-col>
+          <ion-col>
+            <button ion-button full color="btnColor2" (click)="getAudios()"><ion-icon style="font-size: 20pt" name="microphone"></ion-icon></button>
+          </ion-col>
+          <ion-col>
+            <button ion-button full color="btnColor3" (click)=" getVideos()"> <ion-icon style="font-size: 20pt" name="videocam"></ion-icon></button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+     <ion-grid>
+       <ion-row *ngIf="display == 1">
+         <ion-col *ngFor="let imgUrl of images">
+          <img src="{{imgUrl}}">
+         </ion-col>
+       </ion-row>
+       <ion-row *ngIf="display == 2">
+          <ion-col *ngFor="let audio of audios">
+           <audio controls>
+              <source src={{audio}} type="audio/mpeg">
+              <source src={{audio}} type="audio/ogg">
+              <source src={{audio}} type="audio/wav">
+           </audio>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="display == 3">
+            <ion-col *ngFor="let video of videos">
+             <video src={{video}} type="video/mp4" controls width="200" height="200"></video>
+            </ion-col>
+          </ion-row>
+     </ion-grid>
+</ion-content>

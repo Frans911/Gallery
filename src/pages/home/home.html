@@ -1,14 +1,29 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+
+  <ion-navbar text-center color="btnTransparency">
+    <ion-title>GalleryApp</ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content class="body" text-center>
+  <div class="logo">
+      <img src="../../assets/imgs/logo.jpg" width="150" height="150">
+  </div>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <button ion-button full color="btnColor1" (click)="uploads('camera')"><ion-icon style="font-size: 20pt" name="image"></ion-icon></button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full color="btnColor2" (click)="uploads('audio')"><ion-icon style="font-size: 20pt" name="microphone"></ion-icon></button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full color="btnColor3" (click)="uploads('video')"> <ion-icon style="font-size: 20pt" name="videocam"></ion-icon></button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<button color="btnTransparency" ion-button style="width: 95%" (click)="uploaded()">View Uploads</button>
+
 </ion-content>
